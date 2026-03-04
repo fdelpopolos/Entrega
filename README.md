@@ -1,9 +1,10 @@
 # Entrega
-
-- Link 1 Francisco Del Popolo
+## 
+- Francisco Del Popolo
 <https://github.com/fdelpopolos/Modulo_1>
-
-- Link 2 Ezequiel Villalba
+- Ezequiel Villalba
 <https://github.com/Eze-Villalba/modulo_1>
-- Link 3
-<>
+- Matias Salinas
+<https://github.com/matiassalinas9/modulo_1>
+- Rcardo Palma
+  <https://github.com/ricardorpalma>
