@@ -18,8 +18,8 @@
 ## Clase 2
 |Apellido|Nombre|Mail|Telefono|Link|
 |-----------|-----------|-----------|-----------|-----------|
-|Del Popolo|Francisco|fdelpopolos@gmail.com|2615260610<https://github.com/fdelpopolos/Modulo_1>|
-|Nicotra|Amparo|nicotraamparo@gmail.com||<https://github.com/nicotraamparo/Modulo_1>|
-|Villalba|Ezequiel|ezequielmartinvillalba@gmail.com||<https://github.com/Eze-Villalba/modulo_1>|
-|Salinas|Matias|matiassalinas701@gmail.com||<https://github.com/matiassalinas9/modulo_1>|
-|Smovir|Pablo|pablosmovir3@gmail.com|||
+|Del Popolo|Francisco|fdelpopolos@gmail.com|2615260610|<https://github.com/fdelpopolos/Modulo_1>|
+|Nicotra|Amparo|nicotraamparo@gmail.com|2615977707|<https://github.com/nicotraamparo/Modulo_1>|
+|Villalba|Ezequiel|ezequielmartinvillalba@gmail.com|3764670102|<https://github.com/Eze-Villalba/modulo_1>|
+|Salinas|Matias|matiassalinas701@gmail.com|2617049238|<https://github.com/matiassalinas9/modulo_1>|
+|Smovir|Pablo|pablosmovir3@gmail.com|2617457316||
