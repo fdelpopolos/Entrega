@@ -13,8 +13,8 @@
 
 |Apellido|Nombre|Mail|Telefono|Link|
 |-----------|-----------|-----------|-----------|-----------|
-||||||
-||||||
-||||||
-||||||
-||||||
+|Del Popolo|Francisco|fdelpopolos@gmail.com|2615260610|<https://github.com/fdelpopolos/Modulo_1>|
+|Nicotra|Amparo||||
+|Villalba|Ezequiel||||
+|Salinas|Matias||||
+|Smovir|Pablo||||
