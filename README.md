@@ -6,5 +6,7 @@
 <https://github.com/Eze-Villalba/modulo_1>
 - Matias Salinas
 <https://github.com/matiassalinas9/modulo_1>
+- Amparo Nicotra
+  <https://github.com/nicotraamparo/Modulo_1>
 - Rcardo Palma
   <https://github.com/ricardorpalma>
