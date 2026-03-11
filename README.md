@@ -1,5 +1,6 @@
 # Entrega
-## 
+## KPI Rojo
+## Poner Logo y palabras que nos tepresente
 - Francisco Del Popolo
 <https://github.com/fdelpopolos/Modulo_1>
 - Ezequiel Villalba
