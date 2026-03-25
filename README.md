@@ -19,6 +19,7 @@
 - Amparo Nicotra
   <https://github.com/nicotraamparo/Modulo_1>
   Collab:
+  
 - Pablo Smovir
    <https://github.com/pablosmovir3/Modulo_1>
   Collab: 
@@ -35,3 +36,11 @@
 |Villalba|Ezequiel|ezequielmartinvillalba@gmail.com|3764670102|<https://github.com/Eze-Villalba/modulo_1>|
 |Salinas|Matias|matiassalinas701@gmail.com|2617049238|<https://github.com/matiassalinas9/modulo_1>|
 |Smovir|Pablo|pablosmovir3@gmail.com|2617457316|<https://github.com/pablosmovir3/Modulo_1>|
+
+## Clae 3 
+CV
+- Pablo Smovir
+- Amparo Nicotra
+- Matias Salinas
+- Ezequiel Villalba
+- Francisco Del Popolo
