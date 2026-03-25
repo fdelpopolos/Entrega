@@ -19,7 +19,7 @@
 - Amparo Nicotra
   <https://github.com/nicotraamparo/Modulo_1>
   Collab:
-  - Pablo Smovir
+- Pablo Smovir
    <https://github.com/pablosmovir3/Modulo_1>
   
 - Rcardo Palma
