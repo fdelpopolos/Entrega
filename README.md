@@ -39,7 +39,7 @@
 
 ## Clae 3 
 CV
-- Pablo Smovir
+- Pablo Smovir Currículum_Hipster_Sencillo__1_.pdf
 - Amparo Nicotra
 - Matias Salinas
 - Ezequiel Villalba
