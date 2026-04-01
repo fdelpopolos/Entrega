@@ -38,9 +38,9 @@
 |Smovir|Pablo|pablosmovir3@gmail.com|2617457316|<https://github.com/pablosmovir3/Modulo_1>|
 
 ## Clae 3 
-CV
-- Pablo Smovir https://github.com/pablosmovir3/Modulo_1/blob/main/Simple_Hipster_CV__1_.pdf
-- Amparo Nicotra
-- Matias Salinas https://github.com/matiassalinas9/modulo_1/blob/main/CVmatiassalinas.pdf
+Curriculums:
+- Pablo Smovir <https://github.com/pablosmovir3/Modulo_1/blob/main/Simple_Hipster_CV__1_.pdf>
+- Amparo Nicotra <https://github.com/fdelpopolos/Modulo_1/blob/main/CV_Francisco_Del_Popolo.pdf>
+- Matias Salinas <https://github.com/matiassalinas9/modulo_1/blob/main/CVmatiassalinas.pdf>
 - Ezequiel Villalba
 - Francisco Del Popolo
