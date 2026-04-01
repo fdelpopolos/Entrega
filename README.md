@@ -41,6 +41,6 @@
 CV
 - Pablo Smovir https://github.com/pablosmovir3/Modulo_1/blob/main/Simple_Hipster_CV__1_.pdf
 - Amparo Nicotra
-- Matias Salinas
+- Matias Salinas https://github.com/matiassalinas9/modulo_1/blob/main/CVmatiassalinas.pdf
 - Ezequiel Villalba
 - Francisco Del Popolo
