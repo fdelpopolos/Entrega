@@ -51,3 +51,5 @@ Curriculums:
 ## Clase 5:
 - Posit Francisco Del Popolo
 - <https://github.com/fdelpopolos/Modulo_2/blob/main/README.md>
+## Clase 6:
+-Pablo Smovir [Comando DNI.pdf](https://github.com/user-attachments/files/26580694/Comando.DNI.pdf)
