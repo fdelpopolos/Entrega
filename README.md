@@ -2,8 +2,6 @@
 ## KPI Rojo
 <img src="https://github.com/fdelpopolos/Entrega/raw/main/ChatGPT%20Image%2011%20mar%202026%2C%2018_20_38.png" alt="Logo del grupo" width="300">
 
-## Poner Logo y palabras que nos tepresente
-
 ## Clase 1
 - Francisco Del Popolo
 <https://github.com/fdelpopolos/Modulo_1>
