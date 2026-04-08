@@ -40,7 +40,7 @@
 ## Clae 3 
 Curriculums:
 - Pablo Smovir <https://github.com/pablosmovir3/Modulo_1/blob/main/Simple_Hipster_CV__1_.pdf>
-- Amparo Nicotra <https://github.com/fdelpopolos/Modulo_1/blob/main/CV_Francisco_Del_Popolo.pdf>
+- Amparo Nicotra 
 - Matias Salinas <https://github.com/matiassalinas9/modulo_1/blob/main/CVmatiassalinas.pdf>
 - Ezequiel Villalba
-- Francisco Del Popolo
+- Francisco Del Popolo <https://github.com/fdelpopolos/Modulo_1/blob/main/CV_Francisco_Del_Popolo.pdf>
