@@ -53,4 +53,5 @@ Curriculums:
 - <https://github.com/fdelpopolos/Modulo_2/blob/main/README.md>
 - Pablo Smovir [Clase 5.pdf](https://github.com/user-attachments/files/26580807/Clase.5.pdf)
 ## Clase 6:
--Pablo Smovir [Comando DNI.pdf](https://github.com/user-attachments/files/26580694/Comando.DNI.pdf)
+-Pablo Smovir [Clase 6 Comando DNI.pdf](https://github.com/user-attachments/files/26581133/Clase.6.Comando.DNI.pdf)
+
