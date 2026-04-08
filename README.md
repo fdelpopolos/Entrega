@@ -44,6 +44,7 @@ Curriculums:
 - Matias Salinas <https://github.com/matiassalinas9/modulo_1/blob/main/CVmatiassalinas.pdf>
 - Ezequiel Villalba
 - Francisco Del Popolo <https://github.com/fdelpopolos/Modulo_1/blob/main/CV_Francisco_Del_Popolo.pdf>
+                      <https://github.com/fdelpopolos/Modulo_1/blob/main/main.tex>
 
 ## Clase 4:
 
