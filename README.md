@@ -50,3 +50,5 @@ Curriculums:
 ## Clase 4:
 
 ## Clase 5:
+- Posit Francisco Del Popolo
+- <https://github.com/fdelpopolos/Modulo_2/blob/main/README.md>
