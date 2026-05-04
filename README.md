@@ -55,3 +55,16 @@ Curriculums:
 ## Clase 6:
 -Pablo Smovir [Clase 6 Comando DNI.pdf](https://github.com/user-attachments/files/26581133/Clase.6.Comando.DNI.pdf)
 
+
+# Entrega Modulo 2
+## Modulo_2
+Decidimos publicar los archivos r markdown en una de las plataformas que sugiere posit.cloud  para que se pueda visualizar el trabajo completo, ademas se adjunta un pdf con el codigo del trabajo final del modulo para poder revisarlo a futuro.
+
+## Resumen y archivo Posit.cloud publicaado
+<https://rpubs.com/Fran2403/1419075>
+
+## Actividad integradora (La penitencia de Newton con tic toc)
+<>
+<https://rpubs.com/Fran2403/1429311>
+
+
