@@ -64,7 +64,7 @@ Decidimos publicar los archivos r markdown en una de las plataformas que sugiere
 <https://rpubs.com/Fran2403/1419075>
 
 ## Actividad integradora (La penitencia de Newton con tic toc)
-<>
+<https://github.com/fdelpopolos/Entrega/blob/main/Modulo%202%20-%20Parte%202%20-%20Posit%20Cloud.pdf>
 <https://rpubs.com/Fran2403/1429311>
 
 
