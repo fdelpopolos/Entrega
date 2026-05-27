@@ -1,7 +1,7 @@
 # Informe Simul8
 [Informe_de_Simul8_.pdf](https://github.com/user-attachments/files/28321164/Informe_de_Simul8_corregido.pdf)
 
-# Informe del Protecto
+# Informe del Proyecto
 [Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf](https://github.com/user-attachments/files/28317389/Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf)
  
 # ZIP con los archivos del proyecto y los infromes
