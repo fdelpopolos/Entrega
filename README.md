@@ -70,8 +70,8 @@ Decidimos publicar los archivos r markdown en una de las plataformas que sugiere
 # Entrega Modulo 3
 ## Modulo_3
 
- [Informe de Simul8.pdf](https://github.com/user-attachments/files/28317234/Informe.de.Simul8.pdf)
- 
+[Informe_de_Simul8_.pdf](https://github.com/user-attachments/files/28321164/Informe_de_Simul8_corregido.pdf)
+
  [Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf](https://github.com/user-attachments/files/28317389/Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf)
  
 Simulador de Planta ...
