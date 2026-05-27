@@ -66,5 +66,13 @@ Decidimos publicar los archivos r markdown en una de las plataformas que sugiere
 ## Actividad integradora (La penitencia de Newton con tic toc)
 <https://github.com/fdelpopolos/Entrega/blob/main/Modulo%202%20-%20Parte%202%20-%20Posit%20Cloud.pdf>
 <https://rpubs.com/Fran2403/1429311>
+## Modulo_3
+ [Informe de Simul8.pdf](https://github.com/user-attachments/files/28317234/Informe.de.Simul8.pdf)
+ [Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf](https://github.com/user-attachments/files/28317389/Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf)
+Simulador de Planta ...
+
+
+
+
 
 
