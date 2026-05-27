@@ -72,9 +72,10 @@ Decidimos publicar los archivos r markdown en una de las plataformas que sugiere
 
 [Informe_de_Simul8_.pdf](https://github.com/user-attachments/files/28321164/Informe_de_Simul8_corregido.pdf)
 
- [Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf](https://github.com/user-attachments/files/28317389/Informe_De_Simulacion_de_Procesos_de_una_Planta_Aceitunera.pdf)
- 
-Archivo zip con los 2 informes y el simulador [Archivos_Aceitunera.zip](https://github.com/user-attachments/files/28321254/Archivos_Aceitunera.zip)
+[Informe_de Simulacion de Proceso de Planta Aceitunera.pdf](https://github.com/user-attachments/files/28323806/Informe_Aceitunera_corregido.pdf)
+
+Archivo zip con los 2 informes y el simulador [Entrega_Final.zip](https://github.com/user-attachments/files/28323847/Entrega_Final.zip)
+
 
 
 
