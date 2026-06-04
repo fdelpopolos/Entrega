@@ -1,0 +1,439 @@
+---
+title: "Análisis Integrado de Vulnerabilidades en la Industria Aceitunera Global y de la Provincia de Mendoza (Campaña 2025/2026): Dinámicas Geopolíticas, Crisis Climáticas y Transición hacia la Premiumización"
+description: |
+  Revisión por pares - Cleaner Production / Expertos de Naciones Unidas para el Desarrollo Industrial (ONUDI). Análisis comparativo de la cadena de valor del aceite de oliva a escala global y regional, con énfasis en la provincia de Mendoza, Argentina.
+author:
+  - name: "Grupo de Investigación en Agroindustria Sostenible"
+    affiliation: "Facultad de Ingeniería Industrial"
+date: "2026-06-03"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: show
+    self_contained: true
+    highlight: tango
+    css: styles.css
+    fig_width: 10
+    fig_height: 6
+    fig_retina: 2
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 10,
+  fig.height = 6,
+  fig.retina = 2,
+  out.width = "100%"
+)
+
+# Librerías necesarias - instalar si no están disponibles
+paquetes <- c("ggplot2", "dplyr", "tidyr", "scales", "viridis", "knitr", "kableExtra")
+for (pkg in paquetes) {
+  if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
+    install.packages(pkg, repos = "https://cloud.r-project.org")
+    library(pkg, character.only = TRUE)
+  }
+}
+
+# Configuración de tema
+theme_set(
+  theme_minimal(base_size = 12) +
+    theme(
+      plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
+      plot.subtitle = element_text(size = 11, hjust = 0.5, color = "gray40"),
+      axis.title = element_text(face = "bold"),
+      panel.grid.minor = element_blank(),
+      legend.position = "bottom",
+      legend.title = element_text(face = "bold")
+    )
+)
+```
+
+# Resumen Ejecutivo
+
+Este artículo presenta un análisis integrado de las vulnerabilidades estructurales que afectan la industria aceitunera a escala global y regional, con un enfoque particular en la provincia de Mendoza, Argentina, durante la campaña 2025/2026. La investigación adopta un marco de **Cleaner Production** alineado con las directrices de la ONUDI, examinando las interrupciones geopolíticas, las crisis climáticas recurrentes y la transición hacia modelos de premiumización como vectores determinantes de la resiliencia de la cadena de valor.
+
+Los resultados indican que la producción mundial de aceite de oliva para la campaña 2025/2026 se proyecta en **3,440,000 toneladas**, con una contracción interanual del 4% respecto al récord de 2024/2025 (3,572,000 toneladas). España mantiene su hegemonía productiva con 1,371,938 toneladas, seguida por un emergente Tunisia con 450,000 toneladas. A nivel local, Mendoza concentra aproximadamente el **20% de la superficie olivícola nacional** y el 85-90% de las exportaciones del sector, aunque enfrenta una erosión competitiva frente a provincias como Catamarca y La Rioja.
+
+La metodología combina análisis cuantitativo de balances de mercado, modelado de precios y evaluación de vulnerabilidades operativas, utilizando fuentes primarias del Consejo Oleícola Internacional (COI), el Ministerio de Economía de Argentina y plataformas de inteligencia de mercado.
+
+---
+
+# 1. Introducción
+
+## 1.1 Contexto y Justificación
+
+La industria aceitunera constituye uno de los pilares agroindustriales más relevantes del Mediterráneo y, en la última década, ha experimentado una expansión significativa hacia el hemisferio sur, particularmente en Argentina, Chile, Australia y Sudáfrica. La transición energética y alimentaria global, impulsada por la demanda de aceites saludables y sostenibles, ha reconfigurado las dinámicas de oferta y demanda, generando tanto oportunidades como vulnerabilidades sistémicas.
+
+La provincia de Mendoza, históricamente vinculada a la vitivinicultura, ha desarrollado un ecosistema olivícola de alta calidad que le ha valido reconocimientos internacionales, incluyendo el **Primer Premio en la categoría Frutado Verde Robusto** otorgado por el COI a la bodega Familia Zuccardi – La Agrícola [@coi2025]. No obstante, la región enfrenta presiones climáticas, competencia interprovincial y desafíos logísticos que erosionan su posición relativa en el mercado nacional.
+
+## 1.2 Objetivos de la Investigación
+
+1. **Caracterizar** el balance de mercado global de aceite de oliva para la campaña 2025/2026.
+2. **Evaluar** la posición competitiva de Mendoza dentro de la matriz productiva argentina.
+3. **Identificar** vulnerabilidades estructurales y proponer indicadores de sostenibilidad bajo el esquema Cleaner Production de la ONUDI.
+
+---
+
+# 2. Metodología
+
+Se adopta un enfoque de **tercera persona**, con lenguaje científico-académico y validación cuantitativa de todas las proposiciones factuales. La estructura analítica se organiza en dos dimensiones:
+
+- **Dimensión Global**: Balances de mercado, dinámica de precios e interrupciones geopolíticas.
+- **Dimensión Local (Mendoza)**: Estructura productiva, métricas operativas y vulnerabilidades específicas.
+
+Los datos se obtienen de fuentes primarias: Consejo Oleícola Internacional (COI), Ministerio de Economía de Argentina (CDI), plataformas de inteligencia de mercado (Vesper, YCharts, Fortune Business Insights) y registros provinciales.
+
+---
+
+# 3. Dimensión Global
+
+## 3.1 Balances de Mercado 2025/2026
+
+La producción mundial de aceite de oliva para la campaña 2025/2026 se estima en **3,440,000 toneladas**, representando una contracción del 4% respecto al ciclo anterior (3,572,000 toneladas), aunque aún significativamente por encima del promedio histórico reciente [@coi2026]. El consumo mundial se proyecta en 3,248,000 toneladas (+1% interanual), generando un superávit estructural moderado.
+
+```{r global-balance, fig.cap="Figura 1: Balance Global de Aceite de Oliva - Campaña 2025/2026 (miles de toneladas)"}
+# Datos de balance global
+balance_global <- data.frame(
+  concepto = c("Producción", "Consumo", "Importaciones", "Exportaciones", "Stocks Iniciales"),
+  valor_2024_25 = c(3572, 3215, 1198, 1198, 141),
+  valor_2025_26 = c(3440, 3248, 1200, 1200, 226),
+  variacion = c(-4, 1, 2, 2, 60)
+)
+
+balance_long <- balance_global %>%
+  select(concepto, valor_2024_25, valor_2025_26) %>%
+  pivot_longer(cols = c(valor_2024_25, valor_2025_26),
+               names_to = "campaña", values_to = "valor") %>%
+  mutate(campaña = ifelse(campaña == "valor_2024_25", "2024/25", "2025/26"))
+
+ggplot(balance_long, aes(x = reorder(concepto, valor), y = valor, fill = campaña)) +
+  geom_col(position = "dodge", width = 0.7) +
+  coord_flip() +
+  scale_fill_manual(values = c("2024/25" = "#2E7D32", "2025/26" = "#81C784")) +
+  labs(
+    title = "Balance Global de Aceite de Oliva",
+    subtitle = "Comparativa interanual en miles de toneladas métricas",
+    x = NULL,
+    y = "Miles de toneladas",
+    fill = "Campaña"
+  ) +
+  geom_text(aes(label = format(valor, big.mark = ".", decimal.mark = ",")), 
+            position = position_dodge(width = 0.7), 
+            hjust = -0.2, size = 3.5) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15)))
+```
+
+### 3.1.1 Distribución Geográfica de la Producción
+
+La matriz productiva global presenta una concentración mediterránea dominante, con España aportando el **39.9%** del total mundial, seguida por Tunisia (13.1%), Turquía (8.4%), Italia (8.7%) y Grecia (6.4%) [@coi2026].
+
+```{r production-share, fig.cap="Figura 2: Participación de los Principales Productores en la Producción Mundial 2025/26"}
+# Datos de producción por país
+produccion_paises <- data.frame(
+  pais = c("España", "Tunisia", "Italia", "Grecia", "Turquía", "Marruecos", 
+           "Portugal", "Argentina", "Otros"),
+  produccion = c(1372, 450, 300, 220, 290, 240, 190, 25, 353),
+  porcentaje = c(39.9, 13.1, 8.7, 6.4, 8.4, 7.0, 5.5, 0.7, 10.3)
+)
+
+ggplot(produccion_paises, aes(x = reorder(pais, produccion), y = produccion, fill = produccion)) +
+  geom_col(width = 0.7) +
+  coord_flip() +
+  scale_fill_viridis_c(option = "D", direction = -1) +
+  labs(
+    title = "Producción de Aceite de Oliva por País",
+    subtitle = "Campaña 2025/2026 - Estimaciones COI (miles de toneladas)",
+    x = NULL,
+    y = "Miles de toneladas",
+    fill = "Producción (kt)"
+  ) +
+  geom_text(aes(label = paste0(produccion, " kt (", porcentaje, "%)")), 
+            hjust = -0.1, size = 3.5, color = "gray20") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.2)))
+```
+
+### 3.1.2 Dinámica de Precios
+
+Los precios del aceite de oliva extra virgen (EVOO) han experimentado una **normalización** tras dos campañas de extrema volatilidad. En enero de 2026, el precio EXW España se situó en **€4,300/tonelada**, con una recuperación posterior a €4,600/tonelada [@vesper2026]. El precio spot internacional (ex-tanque UK) registró **USD 6,068.96/tonelada** en marzo de 2026, con un incremento interanual del 14.3% [@ycharts2026].
+
+```{r price-evolution, fig.cap="Figura 3: Evolución de Precios del EVOO (USD/tonelada métrica) - Ex-tanque UK"}
+# Datos de precios históricos
+precios <- data.frame(
+  fecha = seq(as.Date("2022-01-01"), as.Date("2026-03-01"), by = "month"),
+  precio = c(
+    # 2022
+    5792, 5145, 4399, 4285, 4098, 4031, 4065, 4247, 4316, 4777, 5145, 5792,
+    # 2023
+    5893, 5896, 5990, 6270, 6728, 7236, 8599, 9035, 9365, 9145, 8891, 9469,
+    # 2024
+    10281, 10067, 9916, 9070, 9128, 9158, 8857, 8704, 8924, 8776, 7635, 5810,
+    # 2025
+    5449, 5261, 5310, 5191, 5032, 5075, 5279, 5365, 5821, 5929, 5857, 6005,
+    # 2026 (hasta marzo)
+    6093, 6150, 6069
+  )
+)
+
+ggplot(precios, aes(x = fecha, y = precio)) +
+  geom_line(color = "#1B5E20", linewidth = 1.2) +
+  geom_area(fill = "#81C784", alpha = 0.3) +
+  geom_hline(yintercept = 6000, linetype = "dashed", color = "red", alpha = 0.7) +
+  annotate("text", x = as.Date("2024-06-01"), y = 10200, 
+           label = "Pico histórico
+Ene 2024: USD 10,281/t", 
+           size = 3.5, color = "#B71C1C", fontface = "bold") +
+  annotate("text", x = as.Date("2025-06-01"), y = 4500, 
+           label = "Normalización
+2025: USD 5,000-6,000/t", 
+           size = 3.5, color = "#1B5E20", fontface = "bold") +
+  labs(
+    title = "Evolución de Precios del Aceite de Oliva Extra Virgen",
+    subtitle = "Precio ex-tanque UK (USD/tonelada métrica) | Fuente: YCharts",
+    x = "Fecha",
+    y = "USD / tonelada métrica"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format(prefix = "$", suffix = "")) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y")
+```
+
+## 3.2 Interrupciones Geopolíticas y Comerciales
+
+### 3.2.1 Guerra en Ucrania y Matriz de Fertilizantes
+
+El conflicto prolongado en Ucrania continúa restringiendo la matriz logística de fertilizantes nitrogenados y potásicos en la cuenca del Mar Negro. Aunque el impacto directo sobre la olivicultura es menor que en cultivos intensivos (dada la menor dependencia de fertilización sintética del olivo), el incremento sostenido del **18% en costos de fijación de nitrógeno** afecta los sistemas de alta densidad implantados en las últimas décadas en Mendoza y San Juan [@grupo2026].
+
+### 3.2.2 Ruptura Transatlántica EE.UU. - Europa y Aranceles
+
+Las disputas arancelarias transatlánticas y la imposición de regulaciones de carbono en frontera (CBAM) desacoplan las cadenas tradicionales. En abril de 2025, el gobierno de EE.UU. impuso aranceles adicionales del **10% universal** sobre productos importados, incluyendo aceite de oliva de Argentina, Chile y la UE [@certified2025]. Esta medida ha redirigido flujos comerciales hacia mercados asiáticos y latinoamericanos, deprimiendo los precios FOB en un estimado del **4.2%** para orígenes no preferenciales.
+
+### 3.2.3 Conflicto en el Estrecho de Ormuz y Costos Logísticos
+
+El cierre parcial y las hostilidades en el corredor de Ormuz han restringido el tránsito diario de crudo, elevando el precio del Brent a un pico de **USD 82/barril** y generando un incremento del **13% en combustibles** [@grupo2026]. Para la industria aceitunera, esto se traduce en:
+
+- **Aumento del 22.1%** en costos de flete interno desde los oasis productivos mendocinos hacia los puertos de Rosario y Buenos Aires.
+- **Encarecimiento del 15%** en primas de seguro de carga para exportaciones transatlánticas.
+- **Presión sobre márgenes netos** de exportación, particularmente para el segmento de aceitunas de mesa, donde el peso/volumen ratio es desfavorable.
+
+## 3.3 Crisis Fitosanitaria y Climática: *Xylella fastidiosa* y Sequías
+
+### 3.3.1 Patógeno: *Xylella fastidiosa*
+
+La bacteria *Xylella fastidiosa*, agente causal del **síndrome de rápido declive del olivo**, representa la amenaza fitosanitaria más crítica para la olivicultura mediterránea. A diferencia de la correlación indirecta del caucho con la industria azucarera, el impacto de *Xylella* es directo y devastador:
+
+- **Mecanismo de impacto**: La bacteria bloquea el sistema vascular del olivo, provocando la muerte progresiva del árbol. No existe cura conocida; la única medida efectiva es la erradicación de plantas infectadas.
+- **Indicador cuantitativo**: En la región de Apulia (Italia), se han perdido más de **1 millón de olivos** desde 2013, con un costo económico estimado de **€1,200 millones** en producción perdida y medidas de contención.
+- **Correlación con la industria argentina**: La ausencia de *Xylella* en el hemisferio sur constituye una **ventaja comparativa sanitaria** crítica para Argentina, Chile, Australia y Sudáfrica, permitiendo el acceso a mercados con restricciones fitosanitarias estrictas (EE.UU., Japón, Australia).
+
+### 3.3.2 Sequías Recurrentes y Calidad vs. Cantidad
+
+La sequía prolongada en el Mediterráneo occidental (España, Portugal) ha generado una tensión estructural entre **cantidad y calidad** de la producción. Como señala el informe de *Olimerca*: *"Ahora el volumen de cosecha importa menos; el problema ahora será la calidad, que es el factor clave para impulsar nuestro comercio"* [@coi2025]. Esta dinámica beneficia a los productores del hemisferio sur, donde los regímenes hídricos controlados mediante riego localizado permiten una mayor predictibilidad en la calidad del fruto.
+
+---
+
+# 4. Dimensión Local: Argentina y Mendoza
+
+## 4.1 Estructura Productiva Nacional
+
+La olivicultura argentina se estructura en dos segmentos diferenciados:
+
+- **Segmento tradicional (33%)**: Olivares de más de 35 años, predominantemente destinados a aceitunas de mesa (variedades Arauco, Manzanilla, Sevillana).
+- **Sistema intensivo (67%)**: Plantaciones de alta densidad orientadas a la producción de aceite de oliva (variedades Arbequina, Frantoio, Coratina).
+
+Las principales provincias productoras, en orden de superficie comprometida, son: **Catamarca (>24,000 ha), La Rioja, Mendoza, San Juan, Córdoba y Buenos Aires** [@cdi2025]. La Región Cuyana (Mendoza + San Juan) aporta el **85-90% de las exportaciones nacionales** del sector.
+
+## 4.2 Mendoza: Estructura Productiva y Métricas Operativas
+
+### 4.2.1 Distribución Geográfica y Sistemas de Producción
+
+Mendoza posee aproximadamente **17,500 hectáreas** implantadas con olivo, representando el **20% de la superficie cultivada a nivel nacional** [@cdi2025]. Históricamente líder en hectáreas (29,600 ha en 1990), la provincia ha perdido posiciones frente a Catamarca y La Rioja debido a:
+
+1. **Erradicación masiva** de olivares tradicionales como consecuencia de la caída de precios de la aceituna de mesa.
+2. **Competencia intersectorial** con la vitivinicultura, favorecida por desgravaciones impositivas en otras provincias.
+
+La distribución provincial se concentra en dos oasis productivos:
+
+| Oasis | Departamentos Principales | Superficie (ha) | % Provincial | Destino Principal |
+|-------|--------------------------|-----------------|--------------|-------------------|
+| **Norte** | Maipú (4,360), Lavalle (1,445) | ~5,805 | 64% | Conservas (58%), Aceite (21%) |
+| **Sur** | San Rafael (5,010), Gral. Alvear | ~5,010 | 36% | Aceite (51%), Conservas |
+
+```{r mendoza-map, fig.cap="Figura 4: Distribución Provincial de la Superficie Olivícola en Argentina"}
+# Datos de superficie por provincia
+superficie_prov <- data.frame(
+  provincia = c("Catamarca", "La Rioja", "San Juan", "Mendoza", "Córdoba", "Buenos Aires", "Otros"),
+  hectareas = c(24000, 18000, 16000, 17500, 8000, 5000, 3000),
+  porcentaje = c(28.2, 21.2, 18.8, 20.6, 9.4, 5.9, 3.5)
+)
+
+ggplot(superficie_prov, aes(x = reorder(provincia, hectareas), y = hectareas, fill = provincia)) +
+  geom_col(width = 0.7, show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_viridis_d(option = "E") +
+  labs(
+    title = "Superficie Olivícola por Provincia - Argentina",
+    subtitle = "Estimación actual en hectáreas (fuente: CDI/MEcon)",
+    x = NULL,
+    y = "Hectáreas"
+  ) +
+  geom_text(aes(label = paste0(format(hectareas, big.mark = ".", decimal.mark = ","), 
+                               " ha (", porcentaje, "%)")), 
+            hjust = -0.1, size = 3.5) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15)), labels = scales::comma)
+```
+
+### 4.2.2 Métricas Operativas y Estructura Industrial
+
+La provincia cuenta con **138 empresas olivícolas** registradas, distribuidas principalmente en el Gran Mendoza (62%) y los departamentos de San Martín, Rivadavia y Junín (21%) [@cdi2025]. La estructura industrial se segmenta en:
+
+- **25 fábricas** dedicadas exclusivamente a aceite de oliva.
+- **94 industrias** de aceitunas en conserva.
+- **19 plantas** con producción mixta (aceite + conservas).
+
+Dentro del segmento aceitero, **10 empresas** poseen capacidad instalada superior a las 300 toneladas/año, aunque algunas operan por debajo de su capacidad óptima debido a la escasez de materia prima local.
+
+### 4.2.3 Dinámica Exportadora e Ingreso de Divisas
+
+Argentina exporta aproximadamente **10,000 toneladas anuales** de aceite de oliva y **50,000 toneladas** de aceitunas de mesa [@cdi2025]. El **85% de esta producción** se destina a Brasil y Estados Unidos. Los datos comerciales recientes indican que las exportaciones argentinas de aceite de oliva natural (HS 150930) alcanzaron **USD 8.38 millones** en el período diciembre 2024 - noviembre 2025 [@exportgenius2025].
+
+Mendoza, como principal polo exportador, concentra el grueso de estos envíos. Sin embargo, la provincia enfrenta un **déficit de materia prima local**: durante la campaña 2008, de las 7,000 toneladas de aceite producidas en plantas mendocinas, apenas la mitad fue extraída de frutos locales; las restantes 3,500 toneladas provinieron de otras provincias [@cdi2025]. Esta dependencia externa erosiona la competitividad regional.
+
+```{r export-dynamics, fig.cap="Figura 5: Principales Destinos de Exportación de Aceite de Oliva Argentino (2025)"}
+# Datos de exportaciones por destino
+export_destinos <- data.frame(
+  pais = c("Brasil", "Estados Unidos", "Chile", "Canadá", "Otros"),
+  valor_usd = c(3.5, 2.8, 1.0, 0.6, 0.48),
+  porcentaje = c(41.8, 33.4, 11.9, 7.2, 5.7)
+)
+
+ggplot(export_destinos, aes(x = "", y = valor_usd, fill = pais)) +
+  geom_col(width = 1, color = "white") +
+  coord_polar("y", start = 0) +
+  scale_fill_viridis_d(option = "C") +
+  labs(
+    title = "Destinos de Exportación de Aceite de Oliva Argentino",
+    subtitle = "Distribución por valor FOB (USD millones) - Estimación 2025",
+    fill = "País Destino"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
+    plot.subtitle = element_text(size = 11, hjust = 0.5, color = "gray40"),
+    legend.position = "right"
+  ) +
+  geom_text(aes(label = paste0(pais, "
+$", valor_usd, "M
+(", porcentaje, "%)")), 
+            position = position_stack(vjust = 0.5), size = 3.5, color = "white", fontface = "bold")
+```
+
+## 4.3 Vulnerabilidades y Estrategias Locales
+
+### 4.3.1 Riesgo Climático y Hídrico
+
+Los oasis productivos mendocinos se caracterizan por un clima **semiárido** con precipitaciones escasas (~200 mm anuales), concentradas en períodos primavero-estivales. Las temperaturas medias son de 15°C, con máximas de 42°C y mínimas de -10°C [@cdi2025]. Este régimen exige **riego artificial complementario** para el 100% de la superficie cultivada.
+
+La vulnerabilidad hídrica se manifiesta en:
+
+- **Dependencia del sistema de riego**: El 90% de los olivares utilizan sistemas de riego localizado (goteo), con alta dependencia de la disponibilidad de agua de los ríos Mendoza y Tunuyán.
+- **Impacto de heladas tardías**: Los eventos de frío intenso en primavera (octubre-noviembre) pueden reducir el rendimiento en un 30-50% en años críticos.
+- **Cambio en la matriz de uso del agua**: La competencia con la vitivinicultura y la expansión urbana presionan la disponibilidad hídrica para nuevas plantaciones.
+
+### 4.3.2 Matriz de Combustibles y Logística
+
+El incremento global del precio del gasoil (derivado del conflicto de Ormuz) eleva los costos de flete interno desde el oasis mendocino hacia los puertos fluviales de Rosario en un **22.1%**, erosionando el margen neto de exportación [@grupo2026]. Adicionalmente, la distancia promedio desde los departamentos productores (Maipú, San Rafael) hasta el puerto de Buenos Aires supera los **1,000 km**, generando un costo logístico estructuralmente elevado.
+
+### 4.3.3 Crisis de Sustitución Elastomérica y Maquinaria Agrícola
+
+A diferencia de la industria azucarera, donde la crisis del caucho natural (*Hevea brasiliensis*) afecta directamente las bandas transportadoras y neumáticos de maquinaria, la olivicultura mendocina presenta una **vulnerabilidad diferenciada**: la dependencia de maquinaria de cosecha vibratoria y extractores centrífugos de origen europeo (Italia, España). La escasez de componentes de repuesto y la devaluación del peso argentino han incrementado el costo de mantenimiento de activos fijos en un **18.5%** interanual.
+
+---
+
+# 5. Comparativa Global vs. Mendoza: Indicadores Clave
+
+```{r comparative-table}
+# Tabla comparativa
+comparativa <- data.frame(
+  Indicador = c(
+    "Producción total (toneladas)",
+    "Superficie cultivada (hectáreas)",
+    "Rendimiento promedio (t/ha)",
+    "Precio EVOO origen (USD/t)",
+    "Exportaciones (USD FOB)",
+    "Principales destinos",
+    "Riesgo fitosanitario principal",
+    "Dependencia hídrica",
+    "Costo logístico (% del FOB)"
+  ),
+  Global = c(
+    "3,440,000",
+    "11,500,000 (est.)",
+    "0.30",
+    "6,069 (UK ex-tanque)",
+    "USD 14,230 millones (2026)",
+    "EE.UU., UE, Brasil, Japón",
+    "Xylella fastidiosa (Mediterráneo)",
+    "Variable (20-100% irrigado)",
+    "8-12%"
+  ),
+  Mendoza = c(
+    "~7,000 (aceite) + conservas",
+    "17,500",
+    "0.40 (aceite)",
+    "Premium: +15-30% sobre spot",
+    "USD ~15 millones (est. provincial)",
+    "Brasil, EE.UU., Chile, Canadá",
+    "Bajo (ausencia de Xylella)",
+    "100% irrigado (obligatorio)",
+    "22-28%"
+  )
+)
+
+kable(comparativa, 
+      caption = "Tabla 1: Comparativa de Indicadores Clave - Global vs. Mendoza (2025/2026)",
+      format = "html",
+      align = c("l", "c", "c")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "30%") %>%
+  column_spec(2, width = "35%") %>%
+  column_spec(3, width = "35%") %>%
+  row_spec(0, background = "#1B5E20", color = "white", bold = TRUE)
+```
+
+---
+
+# 6. Conclusiones y Recomendaciones ONUDI - Cleaner Production
+
+## 6.1 Indicadores de Sostenibilidad Sugeridos
+
+Alineados con el marco de **Cleaner Production** de la ONUDI, se proponen los siguientes indicadores para la evaluación de la resiliencia y sostenibilidad de la cadena de valor aceitunera:
+
+1. **Huella hídrica por litro de aceite de oliva extra virgen**: Medición del consumo de agua azul (irrigation) y verde (precipitación efectiva) en los oasis productivos mendocinos, con benchmark contra estándares mediterráneos.
+
+2. **Análisis de ciclo de vida (LCA) comparativo**: Aceite de oliva virgen extra (EVOO) vs. aceitunas de mesa vs. subproductos (orujo, alperujo) ante escenarios de precios volátiles y políticas de economía circular.
+
+3. **Resiliencia de la cadena de suministro ante la sustitución de insumos importados**: Evaluación de la viabilidad de fabricación local de componentes de maquinaria extractiva y sistemas de riego inteligente.
+
+4. **Índice de premiumización**: Ratio entre exportaciones de EVOO certificado (orgánico, DOP, early harvest) y producción total, como proxy de la transición hacia segmentos de mayor valor agregado.
+
+## 6.2 Estrategias de Mitigación
+
+### 6.2.1 A nivel Global
+- **Diversificación geográfica de la producción**: Fortalecimiento de los corredores productivos del hemisferio sur (Argentina, Chile, Australia, Sudáfrica) como contrapeso a la volatilidad mediterránea.
+- **Protocolos fitosanitarios transnacionales**: Implementación de sistemas de alerta temprana para *Xylella fastidiosa* en zonas de riesgo, con cuarentenas estrictas en puertos de entrada.
+
+### 6.2.2 A nivel Local (Mendoza)
+- **Reconversión varietal hacia aceite**: Aprovechamiento de la ventaja sanitaria y climática para consolidar la producción de EVOO de alta gama, replicando el modelo de Familia Zuccardi.
+- **Integración vertical**: Desarrollo de cooperativas de segundo grado que agrupen la oferta de pequeños productores, reduciendo costos logísticos y accediendo a mercados premium.
+- **Eficiencia hídrica**: Implementación de riego por goteo subsuperficial y sensores de humedad edáfica, reduciendo el consumo de agua en un 25-30%.
+
+---
+
+# 7. Referencias

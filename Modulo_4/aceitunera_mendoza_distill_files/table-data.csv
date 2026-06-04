@@ -1,0 +1,33 @@
+concepto,valor_2024_25,valor_2025_26,variacion_pct
+Produccion,3572,3440,-4
+Consumo,3215,3248,1
+Importaciones,1198,1200,2
+Exportaciones,1198,1200,2
+Stocks_Iniciales,141,226,60
+
+pais,produccion_kt,porcentaje
+España,1372,39.9
+Tunisia,450,13.1
+Italia,300,8.7
+Grecia,220,6.4
+Turquía,290,8.4
+Marruecos,240,7.0
+Portugal,190,5.5
+Argentina,25,0.7
+Otros,353,10.3
+
+provincia,hectareas,porcentaje
+Catamarca,24000,28.2
+La Rioja,18000,21.2
+San Juan,16000,18.8
+Mendoza,17500,20.6
+Córdoba,8000,9.4
+Buenos Aires,5000,5.9
+Otros,3000,3.5
+
+pais_destino,valor_usd_millones,porcentaje
+Brasil,3.5,41.8
+Estados Unidos,2.8,33.4
+Chile,1.0,11.9
+Canadá,0.6,7.2
+Otros,0.48,5.7
